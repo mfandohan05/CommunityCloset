@@ -1,0 +1,30 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #E8F7EE;
+}
+.left-navbar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.right-navbar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.navbar-menu-button {
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    border: 2.5px solid #394648;
+}
+.navbar-button {
+    border: 2px solid #44a8e2;
+    border-radius: 50%;
+    padding: 0.25rem;
+}
+.site-name > a {
+    color: #394648;
+}

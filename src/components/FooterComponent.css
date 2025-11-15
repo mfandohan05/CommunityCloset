@@ -1,0 +1,17 @@
+.footer-logo {
+    width: 50%;
+}
+.footer-container {
+    background-color: #20d3f3;
+    padding-top: 2rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding-left: 0;
+}

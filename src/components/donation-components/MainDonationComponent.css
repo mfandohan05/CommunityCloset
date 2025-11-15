@@ -1,0 +1,9 @@
+.main-donation-component {
+  display: grid;
+  margin: 0 auto;
+
+}
+.main-donation-component > form {
+  width: 95%;
+  justify-self: center;
+}

@@ -1,0 +1,25 @@
+.main-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 95%;
+    justify-self: center;
+}
+.main-card-img {
+    filter: brightness(0.5);
+    width: 100%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50px;
+    cursor: none;
+}
+.main-card-text {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    color: white;
+    align-self: center;
+    text-align: center;
+    z-index: 1000;
+}

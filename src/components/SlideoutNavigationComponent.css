@@ -1,0 +1,30 @@
+.slideout-menu {
+    background-color: #F9FAFB;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+    z-index: 10000;
+    padding: 2rem;
+}
+.slideout-menu.active {
+    transform: translateX(0);
+}
+.slideout-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
+.slideout-links > li > a {
+    font-size: 1.5rem;
+}
+.close-button {
+    width: 36px;
+    height: 36px;
+}
