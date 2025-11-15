@@ -4,6 +4,7 @@ import './App.css'
 import FooterComponent from './components/FooterComponent.jsx';
 import MainDonationComponent from './components/donation-components/MainDonationComponent.jsx';
 import HomePageComponent from './components/HomePageComponent.jsx';
+import SuccessfulDonationComponent from './components/donation-components/SuccessfulDonationComponent.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <NavbarComponent />
       <Routes>
         <Route path="/donate" element={<MainDonationComponent />} />
+        <Route path="/donation-success" element={<SuccessfulDonationComponent />} />
         <Route path="/" element={<HomePageComponent />} />
       </Routes>
       <FooterComponent />

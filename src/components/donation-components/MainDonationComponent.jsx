@@ -2,6 +2,7 @@ import DonorDetailsComponent from './DonorDetailsComponent';
 import ItemDetailsComponent from './ItemDetailsComponent';
 import './MainDonationComponent.css';
 import UploadPicturesComponent from './UploadPicturesComponent';
+import { Link } from 'react-router-dom';
 
 function MainDonationComponent() {
     return (
@@ -15,7 +16,9 @@ function MainDonationComponent() {
                 <UploadPicturesComponent />
                 <DonorDetailsComponent />
                 <div className='text-center mt-4 mb-4'>
-                    <button type="submit" className="btn btn-primary submit-donation-button w-100">Submit Donation</button>
+                    <Link to="/donation-success">
+                        <button type="submit" className="btn btn-primary submit-donation-button w-100">Submit Donation</button>
+                    </Link>
                 </div>
             </form>
             
