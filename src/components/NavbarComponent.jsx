@@ -1,5 +1,6 @@
 import './NavbarComponent.css';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SlideoutNavigationComponent from './SlideoutNavigationComponent.jsx';
 
 function NavbarComponent() {
@@ -28,7 +29,7 @@ function NavbarComponent() {
                     <div className='site-name'><a className='text-decoration-none fw-semibold' href='#'>CommunityCloset</a></div>
                 </div>
                 <div className='right-navbar'>
-                    <div className='navbar-button'><a href="#"><img src='img/shopping-cart.svg' alt='Shopping cart icon'></img><span className="mobile-none navbar-button-text">Shopping Cart</span></a></div>
+                    <div className='navbar-button'><Link to="/shopping-cart"><img src='img/shopping-cart.svg' alt='Shopping cart icon'></img><span className="mobile-none navbar-button-text">Shopping Cart</span></Link></div>
                     <div className='navbar-button'><a href='#'><img src='img/account.svg' alt='account icon'></img><span className="mobile-none navbar-button-text">Welcome, User!</span></a></div>
                 </div>
             </div>

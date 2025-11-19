@@ -3,7 +3,6 @@ import './ItemDetailsComponent.css';
 function ItemDetailsComponent() {
     return (
         <div>
-
             <fieldset className='item-details-fieldset'>
                 <legend>Item Details</legend>
                 <label>Item Name</label>

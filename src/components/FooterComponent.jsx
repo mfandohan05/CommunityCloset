@@ -8,7 +8,7 @@ function FooterComponent() {
                 <ul>
                     <li><Link className='' to='/'>Home</Link></li>
                     <li><Link className='' to='/Donate'>Donate</Link></li>
-                    <li><a className='' href='#'>Shop</a></li>
+                    <li><Link className='' to='/Shop'>Shop</Link></li>
                 </ul>
             </div>
             <div className='p-3 text-center text-color'>

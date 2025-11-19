@@ -6,6 +6,9 @@ import MainDonationComponent from './components/donation-components/MainDonation
 import HomePageComponent from './components/HomePageComponent.jsx';
 import SuccessfulDonationComponent from './components/donation-components/SuccessfulDonationComponent.jsx';
 import { Routes, Route } from 'react-router-dom';
+import MainShopComponent from './components/shop-components/MainShopComponent.jsx';
+import ItemDetailComponent from './components/shop-components/ItemDetailComponent.jsx';
+import ShoppingCartComponent from './components/shop-components/ShoppingCartComponent.jsx';
 
 function App() {
 
@@ -15,7 +18,10 @@ function App() {
       <Routes>
         <Route path="/donate" element={<MainDonationComponent />} />
         <Route path="/donation-success" element={<SuccessfulDonationComponent />} />
+        <Route path="/item-detail" element={<ItemDetailComponent />} />
         <Route path="/" element={<HomePageComponent />} />
+        <Route path="/shop" element={<MainShopComponent />} />
+        <Route path="/shopping-cart" element={<ShoppingCartComponent />} />
       </Routes>
       <FooterComponent />
       

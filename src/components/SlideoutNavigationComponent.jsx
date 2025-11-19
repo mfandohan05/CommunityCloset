@@ -10,7 +10,7 @@ function SlideoutNavigationComponent({ isOpen, onClose }) {
                 <li><a onClick={onClose} className='slideout-link' href='#'><img className="close-button" src='/img/close-button.svg' alt='close button'></img></a></li>
                 <li><Link to="/" onClick={onClose} className='slideout-link' href='#'>Home</Link></li>
                 <li><Link to="/Donate" onClick={onClose} className='slideout-link' href='#'>Donate</Link></li>
-                <li><a onClick={onClose} className='slideout-link' href='#'>Shop</a></li>
+                <li><Link to="/Shop" onClick={onClose} className='slideout-link' href='#'>Shop</Link></li>
             </ul>
         </div>
     );

@@ -1,0 +1,12 @@
+.filter-options {
+    padding: 1.5rem;
+}
+#condition-filter, #size-filter, #color-filter {
+    width: 100%;
+}
+.items-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+}
