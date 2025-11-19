@@ -55,6 +55,8 @@ function MainShopComponent() {
             <div className='items-container'>
                 <ItemComponent />
                 <ItemComponent />
+                <ItemComponent />
+                <ItemComponent />
             </div>
 
         </div>
