@@ -28,3 +28,8 @@ legend {
   border-radius: 8px;
   font-size: 1rem;
 }
+@media screen and (min-width: 768px) {
+  fieldset {
+    margin: 0;
+  }
+}

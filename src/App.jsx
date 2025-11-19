@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import MainShopComponent from './components/shop-components/MainShopComponent.jsx';
 import ItemDetailComponent from './components/shop-components/ItemDetailComponent.jsx';
 import ShoppingCartComponent from './components/shop-components/ShoppingCartComponent.jsx';
+import CheckoutScreenComponent from './components/shop-components/CheckoutScreenComponent.jsx';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<HomePageComponent />} />
         <Route path="/shop" element={<MainShopComponent />} />
         <Route path="/shopping-cart" element={<ShoppingCartComponent />} />
+        <Route path="/checkout" element={<CheckoutScreenComponent />} />
       </Routes>
       <FooterComponent />
       

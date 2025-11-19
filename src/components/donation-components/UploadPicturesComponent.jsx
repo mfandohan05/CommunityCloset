@@ -2,7 +2,7 @@ import './UploadPicturesComponent.css';
 
 function UploadPicturesComponent() {
     return (
-        <div>
+        <div className='upload-pictures-container'>
             <fieldset className='upload-pictures-fieldset'>
                 <legend className='mb-3'>Upload Pictures</legend>
                 <div class="mb-3">

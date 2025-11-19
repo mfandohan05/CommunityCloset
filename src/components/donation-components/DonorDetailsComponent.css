@@ -1,0 +1,5 @@
+@media screen and (min-width: 768px) {
+  .donor-details-container {
+    grid-column: 1 / 3;
+  }
+}

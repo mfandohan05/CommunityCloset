@@ -32,6 +32,13 @@ function RecentlyDonatedComponent() {
                             <p>Some representative placeholder content for the third slide.</p>
                         </div>
                     </div>
+                    <div className="carousel-item">
+                        <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/t-shirt.webp" className="d-block w-100 image-border" alt="..." />
+                        <div className="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>

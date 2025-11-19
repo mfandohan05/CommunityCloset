@@ -1,0 +1,60 @@
+.how-section {
+  margin: 2rem 0 3rem;
+  padding: 0 1rem;
+}
+
+.how-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #394648;
+  margin-bottom: 1.5rem;
+}
+
+.how-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.how-step {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.how-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.how-step h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #394648;
+  margin-bottom: 0.4rem;
+}
+
+.how-step p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #5c6b70;
+}
+
+@media (min-width: 768px) {
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .how-step {
+    padding: 1.5rem;
+  }
+
+  .how-icon {
+    font-size: 2.2rem;
+  }
+}

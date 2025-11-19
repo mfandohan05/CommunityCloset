@@ -2,7 +2,7 @@ import './DonorDetailsComponent.css';
 
 function DonorDetailsComponent() {
     return (
-        <div>
+        <div className='donor-details-container'>
             <fieldset className='donor-details-fieldset'>
                 <legend>Donor Details</legend>
                 <div className="mb-3">

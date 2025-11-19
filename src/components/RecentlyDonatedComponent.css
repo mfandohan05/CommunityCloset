@@ -14,3 +14,8 @@
 .carousel-item > img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+@media screen and (min-width: 768px) {
+  .carousel-item > img {
+    filter: brightness(0.85);
+  }
+}

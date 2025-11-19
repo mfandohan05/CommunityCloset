@@ -11,11 +11,11 @@ function MainDonationComponent() {
                 <h1 className='text-center m-3'>Donate an Item!</h1>
                 <p className='text-center'>Your generosity keeps our community moving! Fill out the form below to donate an item.</p>
             </div>
-            <form>
+            <form className="main-donation-form">
                 <ItemDetailsComponent />
                 <UploadPicturesComponent />
                 <DonorDetailsComponent />
-                <div className='text-center mt-4 mb-4'>
+                <div className='text-center mt-4 mb-4 button-container'>
                     <Link to="/donation-success">
                         <button type="submit" className="btn btn-primary submit-donation-button w-100">Submit Donation</button>
                     </Link>

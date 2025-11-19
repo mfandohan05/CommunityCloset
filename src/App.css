@@ -12,12 +12,16 @@ ul {
 .mobile-none {
   display: none;
 }
+.desktop-none {
+  display: block;
+}
 .main-page-grid {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
 }
 .image-border {
-  border-radius: 20px;
+  border-radius: 20px !important;
 }
 .text-color {
   color: #394648;
@@ -30,4 +34,37 @@ ul {
   height: 48px;
   top: 50%;
   transform: translateY(-50%);
+}
+@media screen and (min-width: 768px) {
+  .mobile-none {
+    display: flex;
+  }
+  .desktop-none {
+    display: none;
+  }
+    .carousel-item {
+    display: inherit !important;
+    float: inherit !important;
+    width: inherit !important;
+    margin-right: inherit !important;
+    transition: inherit !important;
+  }
+  .slide-button {
+    display: none;
+  }
+  .carousel-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .carousel-control-next {
+    display: none;
+  }
+  .carousel-control-prev {
+    display: none;
+  }
+  .main-page-grid > div:nth-child(2) {
+    width: 1024px;
+    margin: 0 auto;
+  }
 }

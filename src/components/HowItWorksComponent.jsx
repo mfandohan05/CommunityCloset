@@ -1,17 +1,37 @@
 import './HowItWorksComponent.css';
 
 function HowItWorksComponent() {
-    return (
-        <div className='mt-3 mb-3'>
-            <h2 className="fw-bold text-center text-color mb-3">How It Works...</h2>
-            <ol>
-                <li className='mb-2'>Browse.</li>
-                <li className='mb-2'>Reserve.</li>
-                <li className='mb-2'>Pick up.</li>
-                <li className='mb-2'>Repeat!</li>
-            </ol>
+  return (
+    <section className="how-section">
+      <h2 className="how-title">How It Works</h2>
+
+      <div className="how-steps">
+        <div className="how-step">
+          <div className="how-icon">🛍️</div>
+          <h3>Browse</h3>
+          <p>Explore free items available in your community.</p>
         </div>
-    );
-};
+
+        <div className="how-step">
+          <div className="how-icon">📌</div>
+          <h3>Reserve</h3>
+          <p>Hold items you need before someone else grabs them.</p>
+        </div>
+
+        <div className="how-step">
+          <div className="how-icon">📦</div>
+          <h3>Pick Up</h3>
+          <p>Head to your selected pickup location—it's always free.</p>
+        </div>
+
+        <div className="how-step">
+          <div className="how-icon">🔄</div>
+          <h3>Repeat</h3>
+          <p>Give, take, and keep the community moving forward.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default HowItWorksComponent;

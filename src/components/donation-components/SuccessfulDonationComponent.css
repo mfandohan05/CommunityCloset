@@ -8,3 +8,26 @@
     text-align: center;
     width: 90%;
 }
+.successful-donation-sub-container {
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+    .successful-donation-container {
+        display: flex;
+        flex-direction: column;
+        margin: 1.5rem auto !important;
+    }
+    .successful-donation-sub-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .successful-donation-sub-container > a > button {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .successful-donation-sub-container > img {
+        max-width: 500px;
+        align-self: center;
+    }
+}

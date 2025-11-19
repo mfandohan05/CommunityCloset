@@ -28,3 +28,15 @@
 .site-name > a {
     color: #394648;
 }
+@media screen and (min-width: 768px) {
+    .navbar-button {
+        border-radius: 12px;
+        padding: 0.25rem 0.5rem;
+    }
+    .navbar-button > a {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+        align-items: center;
+    }
+}
