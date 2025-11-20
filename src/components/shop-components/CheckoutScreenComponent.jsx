@@ -1,11 +1,18 @@
 import './CheckoutScreenComponent.css';
 import { useCart } from '../../context/CartContext';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function CheckoutScreenComponent() {
   const { cart } = useCart();
+  const [isPickupLocked, setIsPickupLocked] = useState(false);
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.quantity * 0, 0);
+
+  const handlePickupToggle = () => {
+    setIsPickupLocked((prev) => !prev);
+  };
 
   return (
     <main className="checkout-page">
@@ -20,17 +27,36 @@ function CheckoutScreenComponent() {
 
             <div className="pickup-form">
               <label htmlFor="pickupName">Full Name</label>
-              <input id="pickupName" type="text" placeholder="Enter your name" />
+              <input
+                id="pickupName"
+                type="text"
+                placeholder="Enter your name"
+                disabled={isPickupLocked}
+              />
 
               <label htmlFor="pickupEmail">Email Address</label>
-              <input id="pickupEmail" type="email" placeholder="you@example.com" />
+              <input
+                id="pickupEmail"
+                type="email"
+                placeholder="you@example.com"
+                disabled={isPickupLocked}
+              />
 
               <label htmlFor="pickupPhone">Phone Number</label>
-              <input id="pickupPhone" type="tel" placeholder="(555) 555-5555" />
+              <input
+                id="pickupPhone"
+                type="tel"
+                placeholder="(555) 555-5555"
+                disabled={isPickupLocked}
+              />
             </div>
 
-            <button className="btn-primary full-width-btn" type="button">
-              Confirm pickup info
+            <button
+              className="btn-primary full-width-btn"
+              type="button"
+              onClick={handlePickupToggle}
+            >
+              {isPickupLocked ? 'Edit pickup info' : 'Confirm pickup info'}
             </button>
           </section>
 
@@ -40,9 +66,7 @@ function CheckoutScreenComponent() {
             </header>
 
             <div className="order-items">
-              {cart.length === 0 && (
-                <p>Your cart is currently empty.</p>
-              )}
+              {cart.length === 0 && <p>Your cart is currently empty.</p>}
 
               {cart.map((item) => {
                 const thumb =
@@ -57,7 +81,12 @@ function CheckoutScreenComponent() {
                       <img
                         src={thumb}
                         alt={item.item_name}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          borderRadius: '12px',
+                        }}
                       />
                     </div>
                     <div className="order-item-info">
@@ -66,7 +95,9 @@ function CheckoutScreenComponent() {
                         Quantity: {item.quantity}
                         {item.item_size && ` · Size: ${item.item_size}`}
                       </p>
-                      <p className="order-item-location">Pickup: CommunityCloset Center</p>
+                      <p className="order-item-location">
+                        Pickup: CommunityCloset Center
+                      </p>
                     </div>
                   </div>
                 );
@@ -88,9 +119,9 @@ function CheckoutScreenComponent() {
               </div>
             </div>
 
-            <button className="btn-primary full-width-btn place-order-btn" type="button">
+            <Link to="/successful-checkout" className="btn-primary full-width-btn place-order-btn">
               Place order
-            </button>
+            </Link>
           </section>
         </div>
       </div>

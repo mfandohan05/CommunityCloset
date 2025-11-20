@@ -17,6 +17,7 @@
   display: block;
   object-fit: cover;
   border-radius: 16px;
+  height: 400px;
 }
 
 .item-info h1 {

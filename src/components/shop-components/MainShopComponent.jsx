@@ -7,7 +7,6 @@ function MainShopComponent() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     const [colorFilter, setColorFilter] = useState('');
     const [conditionFilter, setConditionFilter] = useState('');
     const [sizeFilter, setSizeFilter] = useState('');
@@ -18,11 +17,9 @@ function MainShopComponent() {
             setLoading(true);
             setError(null);
 
-            // If you have an item_availability column, filter on it here
             const { data, error } = await supabase
                 .from('items')
                 .select('*')
-                // .eq('item_availability', true)
                 .order('created_at', { ascending: false });
 
             if (error) {
@@ -42,7 +39,7 @@ function MainShopComponent() {
         if (colorFilter && item.item_color !== colorFilter) return false;
         if (conditionFilter && item.item_condition !== conditionFilter) return false;
 
-        // If you store size as text like "M", "L", etc:
+
         if (sizeFilter && item.item_size?.toLowerCase() !== sizeFilter.toLowerCase()) {
             return false;
         }
@@ -60,12 +57,9 @@ function MainShopComponent() {
     return (
         <div className="main-shop-container">
             <h1 className="text-center m-3">Shop All Items</h1>
-
-            {/* Filters section */}
             <h2 className="ms-4">Filters</h2>
             <div className="filter-options">
                 <div className="dropdown-container">
-                    {/* Color filter */}
                     <div>
                         <label htmlFor="color-filter" className="me-2">
                             Color
@@ -87,7 +81,6 @@ function MainShopComponent() {
                         </select>
                     </div>
 
-                    {/* Condition filter */}
                     <div>
                         <label htmlFor="condition-filter" className="me-2">
                             Condition
@@ -106,7 +99,7 @@ function MainShopComponent() {
                         </select>
                     </div>
 
-                    {/* Size filter */}
+
                     <div>
                         <label htmlFor="size-filter" className="me-2">
                             Size
@@ -128,13 +121,11 @@ function MainShopComponent() {
                     </div>
                 </div>
 
-                {/* "Apply" button is cosmetic now; filters apply automatically */}
                 <div className="border-bottom apply-container">
                     <button
                         type="button"
                         className="btn btn-primary w-100 my-3"
                         onClick={() => {
-                            // no-op: filters are already live; you could scroll to items here if you want
                             const itemsSection = document.querySelector('.items-container');
                             if (itemsSection) itemsSection.scrollIntoView({ behavior: 'smooth' });
                         }}
@@ -144,7 +135,6 @@ function MainShopComponent() {
                 </div>
             </div>
 
-            {/* Search bar */}
             <div className="d-flex gap-2 pe-4 ps-4 pb-4">
                 <input
                     type="text"
@@ -164,8 +154,6 @@ function MainShopComponent() {
                     Search
                 </button>
             </div>
-
-            {/* Items grid */}
             <div className="items-container">
                 {loading && <p>Loading items...</p>}
                 {error && <p className="text-danger">{error}</p>}

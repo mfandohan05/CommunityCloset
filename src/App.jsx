@@ -10,6 +10,7 @@ import MainShopComponent from './components/shop-components/MainShopComponent.js
 import ItemDetailComponent from './components/shop-components/ItemDetailComponent.jsx';
 import ShoppingCartComponent from './components/shop-components/ShoppingCartComponent.jsx';
 import CheckoutScreenComponent from './components/shop-components/CheckoutScreenComponent.jsx';
+import SuccessfulCheckoutComponent from './components/shop-components/SuccessfulCheckoutComponent.jsx';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/shop" element={<MainShopComponent />} />
         <Route path="/shopping-cart" element={<ShoppingCartComponent />} />
         <Route path="/checkout" element={<CheckoutScreenComponent />} />
+        <Route path="/successful-checkout" element={<SuccessfulCheckoutComponent />}></Route>
       </Routes>
       <FooterComponent />
       
