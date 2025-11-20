@@ -14,7 +14,7 @@ function SlideoutNavigationComponent({ isOpen, onClose }) {
                 <ul className='list-unstyled slideout-links'>
                     <li>
                         <button onClick={onClose} className='close-btn'>
-                            <img className="close-button" src='/img/close-button.svg' alt='close button' />
+                            <img className="close-button" src='https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/close-button.svg' alt='close button' />
                         </button>
                     </li>
                     <li><Link to="/" onClick={onClose} className='slideout-link'>Home</Link></li>

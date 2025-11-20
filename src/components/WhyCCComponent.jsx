@@ -7,19 +7,19 @@ function WhyCCComponent() {
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner image-border">
                     <div className="carousel-item active">
-                        <img src="/img/short-value-1.jpg" className="d-block w-100 image-border" alt="..." />
+                        <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/short-value-1.jpg" className="d-block w-100 image-border" alt="..." />
                         <p className='mt-2'>Because sharing strengthens communities.</p>
                     </div>
                     <div className="carousel-item">
-                        <img src="/img/short-value-2.jpg" className="d-block w-100 image-border" alt="..." />
+                        <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/short-value-2.jpg" className="d-block w-100 image-border" alt="..." />
                         <p className='mt-2'>Because someone else needs what you're not using.</p>
                     </div>
                     <div className="carousel-item">
-                        <img src="/img/short-value-3.jpg" className="d-block w-100 image-border" alt="..." />
+                        <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/short-value-3.jpg" className="d-block w-100 image-border" alt="..." />
                         <p className='mt-2'>Because essentials should be accessible to everyone.</p>
                     </div>
                     <div className="carousel-item">
-                        <img src="/img/short-value-4.jpg" className="d-block w-100 image-border" alt="..." />
+                        <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/short-value-4.jpg" className="d-block w-100 image-border" alt="..." />
                         <p className='mt-2'>Because giving back should be simple, and easy as pie.</p>
                     </div>
                 </div>

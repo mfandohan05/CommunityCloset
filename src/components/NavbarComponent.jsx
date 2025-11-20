@@ -24,7 +24,7 @@ function NavbarComponent() {
             <div className="navbar-container">
                 <div className="left-navbar">
                     <div className="navbar-menu-button primary-button">
-                        <a onClick={openMenu} href="#"><img src="/img/menu.svg" alt="menu button" className="menu-button" /></a>
+                        <a onClick={openMenu} href="#"><img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/menu.svg" alt="menu button" className="menu-button" /></a>
                     </div>
 
                     <div className="site-name">
@@ -35,7 +35,7 @@ function NavbarComponent() {
                 <div className="right-navbar">
                     <div className="navbar-button">
                         <Link to="/shopping-cart">
-                            <img src="/img/shopping-cart.svg" alt="Shopping cart icon" />
+                            <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/shopping-cart.svg" alt="Shopping cart icon" />
                             <span className="mobile-none navbar-button-text">
                                 Shopping Cart ({cartCount})
                             </span>
@@ -44,7 +44,7 @@ function NavbarComponent() {
 
                     <div className="navbar-button">
                         <a href="#">
-                            <img src="/img/account.svg" alt="account icon" />
+                            <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/assets/account.svg" alt="account icon" />
                             <span className="mobile-none navbar-button-text">Welcome, User!</span>
                         </a>
                     </div>
