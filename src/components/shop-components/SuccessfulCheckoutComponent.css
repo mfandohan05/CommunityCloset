@@ -6,6 +6,7 @@
   border: 1.5px solid rgba(57, 70, 72, 0.18);
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  width: 95%;
 }
 
 .successful-checkout-text h1 {
