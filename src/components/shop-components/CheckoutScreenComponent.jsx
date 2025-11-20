@@ -1,6 +1,12 @@
 import './CheckoutScreenComponent.css';
+import { useCart } from '../../context/CartContext';
 
 function CheckoutScreenComponent() {
+  const { cart } = useCart();
+
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const subtotal = cart.reduce((sum, item) => sum + item.quantity * 0, 0);
+
   return (
     <main className="checkout-page">
       <div className="checkout-container">
@@ -27,25 +33,50 @@ function CheckoutScreenComponent() {
               Confirm pickup info
             </button>
           </section>
+
           <section className="checkout-card review-card">
             <header className="checkout-card-header">
               <h2>Review Your Order</h2>
             </header>
 
             <div className="order-items">
-              <div className="order-item">
-                <div className="order-item-thumbnail"></div>
-                <div className="order-item-info">
-                  <p className="order-item-name">Warm Winter Coat</p>
-                  <p className="order-item-meta">Quantity: 1 · Size: L</p>
-                  <p className="order-item-location">Pickup: Downtown Center</p>
-                </div>
-              </div>
+              {cart.length === 0 && (
+                <p>Your cart is currently empty.</p>
+              )}
+
+              {cart.map((item) => {
+                const thumb =
+                  item.image_url_1 ||
+                  item.image_url_2 ||
+                  item.image_url_3 ||
+                  'https://placehold.co/48x48';
+
+                return (
+                  <div className="order-item" key={item.item_id}>
+                    <div className="order-item-thumbnail">
+                      <img
+                        src={thumb}
+                        alt={item.item_name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '12px' }}
+                      />
+                    </div>
+                    <div className="order-item-info">
+                      <p className="order-item-name">{item.item_name}</p>
+                      <p className="order-item-meta">
+                        Quantity: {item.quantity}
+                        {item.item_size && ` · Size: ${item.item_size}`}
+                      </p>
+                      <p className="order-item-location">Pickup: CommunityCloset Center</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
+
             <div className="order-summary">
               <div className="summary-row">
-                <span>Items (2)</span>
-                <span>$0.00</span>
+                <span>Items ({totalItems})</span>
+                <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="summary-row">
                 <span>Pickup</span>
@@ -53,9 +84,10 @@ function CheckoutScreenComponent() {
               </div>
               <div className="summary-row summary-row-total">
                 <span>Total</span>
-                <span>$0.00</span>
+                <span>${subtotal.toFixed(2)}</span>
               </div>
             </div>
+
             <button className="btn-primary full-width-btn place-order-btn" type="button">
               Place order
             </button>

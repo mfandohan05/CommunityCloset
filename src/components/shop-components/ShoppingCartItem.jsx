@@ -1,17 +1,22 @@
-import './ShoppingCartItem.css'
+import './ShoppingCartItem.css';
 
-function ShoppingCartItem() {
+function ShoppingCartItem({ item }) {
     return (
-        <div className='shopping-cart-item-container'>
-            <img alt="" className="shopping-cart-item-image" src='https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/jeans.jpeg'></img>
-            <div className='shopping-cart-item-details'>
-                <h2 className='shopping-cart-item-title'>Sample Item</h2>
-                <p className='shopping-cart-item-description'>This is a sample description.</p>
-                <p><strong>Price: </strong>$0.00</p>
-                <a href='#' className='btn btn-primary disabled'>Remove</a>
+        <div className="shopping-cart-item-container">
+            <img
+                src={item?.image_url_1}
+                alt={item?.item_name}
+                className="shopping-cart-item-image"
+            />
+
+            <div className="shopping-cart-item-details">
+                <h5>{item?.item_name}</h5>
+                <p>Condition: {item?.item_condition}</p>
+                <p>Quantity: {item?.cartQuantity}</p>
+                <p>Size: {item?.item_size}</p>
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default ShoppingCartItem;

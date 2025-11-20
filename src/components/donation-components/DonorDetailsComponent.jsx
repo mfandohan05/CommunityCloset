@@ -2,20 +2,26 @@ import './DonorDetailsComponent.css';
 
 function DonorDetailsComponent() {
     return (
-        <div className='donor-details-container'>
-            <fieldset className='donor-details-fieldset'>
-                <legend>Donor Details</legend>
-                <div className="mb-3">
-                    <label htmlFor="donorName" className="form-label">Full Name</label>
-                    <input type="text" className="form-control" id="donorName" placeholder="Enter your full name" />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="donorEmail" className="form-label">Email Address</label>
-                    <input type="email" className="form-control" id="donorEmail" placeholder="Enter your email address" />
-                </div>
-            </fieldset>
-        </div>
+        <fieldset className="donor-details-container">
+            <legend>Donor Details</legend>
+
+            <label htmlFor="donorName" className="form-label">Full Name</label>
+            <input
+                name="donorName"
+                type="text"
+                className="form-control"
+                placeholder="Enter your full name"
+            />
+
+            <label htmlFor="donorEmail" className="form-label">Email Address</label>
+            <input
+                name="donorEmail"
+                type="email"
+                className="form-control"
+                placeholder="Enter your email address"
+            />
+        </fieldset>
     );
-};
+}
 
 export default DonorDetailsComponent;

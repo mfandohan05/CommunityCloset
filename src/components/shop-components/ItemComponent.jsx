@@ -1,18 +1,45 @@
 import './ItemComponent.css';
 import { Link } from 'react-router-dom';
 
-function ItemComponent() {
+function ItemComponent({ item }) {
+    // Select the first available image from your 5 possible URLs
+    const imageSrc =
+        item.image_url_1 ||
+        item.image_url_2 ||
+        item.image_url_3 ||
+        item.image_url_4 ||
+        item.image_url_5 ||
+        "https://placehold.co/400x300?text=No+Image";
+
     return (
         <div className='card mb-3'>
-            <img src="https://slpfitimsbybjuojrsga.supabase.co/storage/v1/object/public/Images%20for%20CommunityCloset/jeans.jpeg" className="card-img-top" alt="Sample Item" />
+            <img 
+                src={imageSrc} 
+                className="card-img-top" 
+                alt={item.item_name} 
+            />
+
             <div className="card-body">
-                <h5 className="card-title"><Link to="/item-detail">Sample Item Name</Link></h5>
-                <p className="card-text">This is a brief description of the sample item.</p>
-                <p className="item-price">$0.00 (Yes, really.)</p>
-                <a href="#" className="btn btn-primary w-100 buy-now-button">Add to Cart</a>
+                <h5 className="card-title">
+                    <Link to={`/item-detail/${item.item_id}`}>
+                        {item.item_name}
+                    </Link>
+                </h5>
+
+                <p className="card-text">
+                    {item.item_brand ? `${item.item_brand}` : "No description available"}
+                </p>
+
+                <p className="item-price">
+                    $0.00 (Yes, really.)
+                </p>
+
+                <button className="btn btn-primary w-100 buy-now-button">
+                    Add to Cart
+                </button>
             </div>
         </div>
-    )
+    );
 };
 
 export default ItemComponent;
