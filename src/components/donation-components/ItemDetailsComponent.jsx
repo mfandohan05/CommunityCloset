@@ -9,7 +9,7 @@ function ItemDetailsComponent() {
             <input name="itemName" className="form-control" type="text" />
 
             <label>Item Condition</label>
-            <select name="itemCondition" className="form-select">
+            <select required name="itemCondition" className="form-select">
                 <option value="new">New</option>
                 <option value="like-new">Like New</option>
                 <option value="used-good">Used - Good</option>
@@ -17,13 +17,20 @@ function ItemDetailsComponent() {
             </select>
 
             <label>Item Quantity</label>
-            <input name="itemQuantity" className="form-control" type="number" />
+            <input required name="itemQuantity" className="form-control" type="number" />
 
             <label>Item Size</label>
-            <input name="itemSize" className="form-control" type="text" />
+            <select required name="itemSize" className="form-select">
+                <option value="s">Small</option>
+                <option value="m">Medium</option>
+                <option value="l">Large</option>
+                <option value="xl">XL</option>
+                <option value="2xl">2XL</option>
+                <option value="3xl">3XL</option>
+            </select>
 
             <label>Item Color</label>
-            <select name="itemColor" className="form-select">
+            <select required name="itemColor" className="form-select">
                 <option value="red">Red</option>
                 <option value="blue">Blue</option>
                 <option value="green">Green</option>
@@ -35,6 +42,8 @@ function ItemDetailsComponent() {
 
             <label>Item Brand</label>
             <input name="itemBrand" className="form-control" type="text" />
+            <label>Item Description</label>
+            <textarea name="itemDescription" className='form-control'></textarea>
         </fieldset>
     );
 }

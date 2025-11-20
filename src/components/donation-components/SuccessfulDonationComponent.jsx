@@ -31,13 +31,13 @@ function SuccessfulDonationComponent() {
                 <img src={previewImage} alt="Uploaded donation preview" />
 
                 <Link to="/Donate" className="text-white text-decoration-none">
-                    <button className="btn btn-primary mt-3">
+                    <button className="btn btn-primary mt-3 w-100">
                         Donate More!
                     </button>
                 </Link>
 
                 <Link to="/Shop" className="text-white text-decoration-none">
-                    <button className="btn btn-primary mt-3">
+                    <button className="btn btn-primary mt-3 w-100">
                         Shop
                     </button>
                 </Link>

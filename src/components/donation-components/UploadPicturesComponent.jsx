@@ -17,6 +17,7 @@ function UploadPicturesComponent() {
                 className="form-control"
                 type="file"
                 multiple
+                required
             />
         </fieldset>
     );

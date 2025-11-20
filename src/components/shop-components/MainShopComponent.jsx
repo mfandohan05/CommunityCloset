@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ItemComponent from './ItemComponent';
 import './MainShopComponent.css';
 import supabase from '../../supabaseClient';
+import { useCart } from '../../context/CartContext';
 
 function MainShopComponent() {
     const [items, setItems] = useState([]);
@@ -11,6 +12,7 @@ function MainShopComponent() {
     const [conditionFilter, setConditionFilter] = useState('');
     const [sizeFilter, setSizeFilter] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
+    const { cart } = useCart();
 
     useEffect(() => {
         const fetchItems = async () => {

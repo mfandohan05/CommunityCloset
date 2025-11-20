@@ -4,12 +4,15 @@ import UploadPicturesComponent from './UploadPicturesComponent';
 import './MainDonationComponent.css';
 import supabase from '../../supabaseClient';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function MainDonationComponent() {
     const navigate = useNavigate();
+    const [processing, setProcessing] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setProcessing(true);
 
         const itemName = e.target.itemName.value;
         const itemCondition = e.target.itemCondition.value;
@@ -17,6 +20,7 @@ function MainDonationComponent() {
         const itemSize = e.target.itemSize.value;
         const itemColor = e.target.itemColor.value;
         const itemBrand = e.target.itemBrand.value;
+        const itemDescription = e.target.itemDescription.value;
 
         const donorName = e.target.donorName.value;
         const donorEmail = e.target.donorEmail.value;
@@ -25,9 +29,9 @@ function MainDonationComponent() {
 
         const bucketName = 'Images for CommunityCloset';
         let imageUrls = [null, null, null, null, null];
+
         for (let i = 0; i < Math.min(files.length, 5); i++) {
             const file = files[i];
-
             const ext = file.name.split('.').pop() || 'png';
             const safeName = `${Date.now()}-${i}`;
             const filePath = `items/${safeName}.${ext}`;
@@ -36,10 +40,7 @@ function MainDonationComponent() {
                 .from(bucketName)
                 .upload(filePath, file);
 
-            if (uploadError) {
-                console.error('Upload error:', uploadError);
-                continue;
-            }
+            if (uploadError) continue;
 
             const { data: publicUrlData } = supabase.storage
                 .from(bucketName)
@@ -54,6 +55,7 @@ function MainDonationComponent() {
                 {
                     item_name: itemName,
                     item_condition: itemCondition,
+                    item_description: itemDescription,
                     item_quantity: itemQuantity,
                     item_size: itemSize,
                     item_color: itemColor,
@@ -72,17 +74,17 @@ function MainDonationComponent() {
             .single();
 
         if (error) {
-            console.error(error);
+            setProcessing(false);
             alert('There was an error submitting your donation.');
             return;
         }
 
         navigate('/donation-success', {
             state: {
-                donationId: data.item_id, 
+                donationId: data.item_id,
                 itemName: data.item_name,
-                previewImage: data.image_url_1,
-            },
+                previewImage: data.image_url_1
+            }
         });
     };
 
@@ -101,9 +103,19 @@ function MainDonationComponent() {
                 <DonorDetailsComponent />
 
                 <div className='text-center mt-4 mb-4 button-container'>
-                    <button type='submit' className='btn btn-primary submit-donation-button w-100'>
+                    <button
+                        type='submit'
+                        className='btn btn-primary submit-donation-button w-100'
+                        disabled={processing}
+                    >
                         Submit Donation
                     </button>
+
+                    {processing && (
+                        <div className='alert alert-info mt-3'>
+                            Processing…
+                        </div>
+                    )}
                 </div>
             </form>
         </div>

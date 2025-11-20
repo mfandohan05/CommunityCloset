@@ -11,6 +11,7 @@ function DonorDetailsComponent() {
                 type="text"
                 className="form-control"
                 placeholder="Enter your full name"
+                required
             />
 
             <label htmlFor="donorEmail" className="form-label">Email Address</label>
@@ -19,6 +20,7 @@ function DonorDetailsComponent() {
                 type="email"
                 className="form-control"
                 placeholder="Enter your email address"
+                required
             />
         </fieldset>
     );

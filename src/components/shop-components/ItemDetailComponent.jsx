@@ -10,6 +10,7 @@ function ItemDetailComponent() {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     const fetchItem = async () => {
@@ -23,7 +24,6 @@ function ItemDetailComponent() {
         .single();
 
       if (error) {
-        console.error('Error fetching item:', error);
         setError('Failed to load item.');
       } else {
         setItem(data);
@@ -32,18 +32,11 @@ function ItemDetailComponent() {
       setLoading(false);
     };
 
-    if (itemId) {
-      fetchItem();
-    }
+    if (itemId) fetchItem();
   }, [itemId]);
 
-  if (loading) {
-    return <div className="item-detail-container">Loading item…</div>;
-  }
-
-  if (error || !item) {
-    return <div className="item-detail-container">Item not found.</div>;
-  }
+  if (loading) return <div className="item-detail-container">Loading item…</div>;
+  if (error || !item) return <div className="item-detail-container">Item not found.</div>;
 
   const mainImage =
     item.image_url_1 ||
@@ -55,19 +48,21 @@ function ItemDetailComponent() {
 
   const availableQty = item.item_quantity || 1;
 
+  const handleAddToCart = () => {
+    addToCart(item);
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 2500);
+  };
+
   return (
     <div className="item-detail-container">
       <div className="item-media">
-        <img
-          alt={item.item_name}
-          className="item-image"
-          src={mainImage}
-        />
+        <img alt={item.item_name} className="item-image" src={mainImage} />
       </div>
 
       <div className="item-info">
         <h1>{item.item_name}</h1>
-        <p>Free pickup available at Goodwill nearby!</p>
+        <p>Free pickup available nearby!</p>
 
         <p>
           <strong>Condition: </strong> {item.item_condition || 'Not specified'}
@@ -93,15 +88,18 @@ function ItemDetailComponent() {
           </div>
         </div>
 
-        <button className="btn btn-primary buy-now-button w-100">
-          Get it now!
-        </button>
         <button
           className="btn btn-primary buy-now-button w-100"
-          onClick={() => addToCart(item)}
+          onClick={handleAddToCart}
         >
           Add to cart
         </button>
+
+        {showAlert && (
+          <div className="alert alert-success mt-3" role="alert">
+            Item added to cart successfully!
+          </div>
+        )}
 
         <h2 className="mt-3">About this item</h2>
 
@@ -120,9 +118,7 @@ function ItemDetailComponent() {
 
         <fieldset className="item-details-fieldset w-100 my-3">
           <legend>Item Description</legend>
-          <p>
-            {item.item_description || 'No description provided.'}
-          </p>
+          <p>{item.item_description || 'No description provided.'}</p>
         </fieldset>
       </div>
     </div>

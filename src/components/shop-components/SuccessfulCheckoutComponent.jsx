@@ -8,7 +8,8 @@ function SuccessfulCheckoutComponent() {
 
     useEffect(() => {
         clearCart();
-    }, [clearCart]);
+    }, []);
+
     return (
         <div className="successful-checkout-container">
             <div className="successful-checkout-text">
@@ -18,7 +19,7 @@ function SuccessfulCheckoutComponent() {
                     We’re getting everything ready for you.
                 </p>
                 <p>
-                    You’ll receive pickup details at the location and time provided on the previous screen.
+                    You’ll receive pickup details at the location and time you provided.
                 </p>
             </div>
 

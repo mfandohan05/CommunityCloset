@@ -2,7 +2,6 @@ import './ItemComponent.css';
 import { Link } from 'react-router-dom';
 
 function ItemComponent({ item }) {
-    // Select the first available image from your 5 possible URLs
     const imageSrc =
         item.image_url_1 ||
         item.image_url_2 ||
@@ -34,9 +33,9 @@ function ItemComponent({ item }) {
                     $0.00 (Yes, really.)
                 </p>
 
-                <button className="btn btn-primary w-100 buy-now-button">
-                    Add to Cart
-                </button>
+                <Link to={`/item-detail/${item.item_id}`} className="btn btn-primary w-100 buy-now-button">
+                    See More
+                </Link>
             </div>
         </div>
     );

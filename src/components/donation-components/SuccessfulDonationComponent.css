@@ -23,11 +23,12 @@
         flex-direction: column;
     }
     .successful-donation-sub-container > a > button {
-        width: 500px;
+        width: 500px!important;
         margin: 0 auto;
     }
     .successful-donation-sub-container > img {
         max-width: 500px;
+        max-height: 500px;
         align-self: center;
     }
 }

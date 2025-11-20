@@ -12,7 +12,7 @@ function ShoppingCartItem({ item }) {
             <div className="shopping-cart-item-details">
                 <h5>{item?.item_name}</h5>
                 <p>Condition: {item?.item_condition}</p>
-                <p>Quantity: {item?.cartQuantity}</p>
+                <p>Quantity: {item?.quantity}</p>
                 <p>Size: {item?.item_size}</p>
             </div>
         </div>
