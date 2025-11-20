@@ -1,9 +1,3 @@
-Got you — the issue is that your triple-backticks were never closed before the “future improvements / license / acknowledgments” sections, so GitHub thinks the entire rest of the file is still inside the same code block.
-
-Here’s the fixed README.md with properly closed code fences and corrected formatting.
-Copy/paste this entire thing — it will render correctly.
-
-⸻
 
 
 # **CommunityCloset**
