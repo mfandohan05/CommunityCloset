@@ -6,7 +6,7 @@ function FooterComponent() {
         <footer className='footer-container'>
             <div>
                 <ul>
-                    <li><Link className='' to='/CommunityCloset'>Home</Link></li>
+                    <li><Link className='' to='/'>Home</Link></li>
                     <li><Link className='' to='/Donate'>Donate</Link></li>
                     <li><Link className='' to='/Shop'>Shop</Link></li>
                 </ul>
