@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { CartProvider } from './context/CartContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/CommunityCloset'>
     <StrictMode>
       <CartProvider>
         <App />
