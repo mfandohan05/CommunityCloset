@@ -30,7 +30,7 @@ function SuccessfulCheckoutComponent() {
                     </button>
                 </Link>
 
-                <Link to="/" className="text-white text-decoration-none">
+                <Link to="/CommunityCloset/" className="text-white text-decoration-none">
                     <button className="btn btn-outline-secondary w-100">
                         Back to home
                     </button>

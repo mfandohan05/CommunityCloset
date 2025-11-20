@@ -28,7 +28,7 @@ function NavbarComponent() {
                     </div>
 
                     <div className="site-name">
-                        <Link className="text-decoration-none fw-semibold" to="/">CommunityCloset</Link>
+                        <Link className="text-decoration-none fw-semibold" to="/CommunityCloset/">CommunityCloset</Link>
                     </div>
                 </div>
 

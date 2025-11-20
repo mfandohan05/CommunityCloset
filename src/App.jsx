@@ -21,7 +21,7 @@ function App() {
         <Route path="/donate" element={<MainDonationComponent />} />
         <Route path="/donation-success" element={<SuccessfulDonationComponent />} />
         <Route path="/item-detail/:itemId" element={<ItemDetailComponent />} />
-        <Route path="/" element={<HomePageComponent />} />
+        <Route path="/CommunityCenter/" element={<HomePageComponent />} />
         <Route path="/shop" element={<MainShopComponent />} />
         <Route path="/shopping-cart" element={<ShoppingCartComponent />} />
         <Route path="/checkout" element={<CheckoutScreenComponent />} />
