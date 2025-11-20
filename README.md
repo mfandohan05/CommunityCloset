@@ -1,3 +1,11 @@
+Got you — the issue is that your triple-backticks were never closed before the “future improvements / license / acknowledgments” sections, so GitHub thinks the entire rest of the file is still inside the same code block.
+
+Here’s the fixed README.md with properly closed code fences and corrected formatting.
+Copy/paste this entire thing — it will render correctly.
+
+⸻
+
+
 # **CommunityCloset**
 A modern, full-stack, React + Supabase web application that allows users to **donate clothing**, **shop for donated items**, and **manage a cart + checkout flow** — all built as an online nonprofit shopping experience.
 
@@ -77,20 +85,20 @@ Clone the repository:
 ```bash
 git clone https://github.com/mfandohan05/CommunityCloset.git
 cd CommunityCloset
-
+```
 Install dependencies:
-
+```
 npm install
-
+```
 Create a .env file:
-
+```
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-
+```
 Run locally:
-
+```
 npm run dev
-
+```
 
 ⸻
 
@@ -101,35 +109,17 @@ This project is already configured with:
 	•	gh-pages for publishing
 
 Build:
-
+```
 npm run build
-
+```
 Deploy:
-
+```
 npm run deploy
-
-Your site will be available at:
-
+```
+This app is available for preview at:
+```
 https://mfandohan05.github.io/CommunityCloset/
-
-
-⸻
-
-📁 Project Structure
-
-src/
-  components/
-    donation-components/
-    shop-components/
-    layout/
-    cart/
-  context/
-    CartContext.jsx
-  App.jsx
-  main.jsx
-  supabaseClient.js
-public/
-  img/
+```
 
 
 ⸻
@@ -137,7 +127,7 @@ public/
 🗄 Database Schema (Supabase)
 
 items table
-
+```
 Column	Type	Description
 item_id	int	Primary key
 item_name	text	Name of item
@@ -150,7 +140,7 @@ donor_name	text	Donor full name
 donor_email	text	Donor email
 image_url_1–5	text	Image URLs stored in storage
 created_at	timestamp	Upload time
-
+```
 
 ⸻
 
@@ -172,5 +162,3 @@ MIT License.
 🙌 Acknowledgments
 
 This project demonstrates a full-stack, cloud-integrated, nonprofit-themed web application using modern React, Supabase, and GitHub Pages deployment workflows.
-
----
